@@ -1,0 +1,487 @@
+{
+  "workouts": [
+    {
+      "id": "full_body_beginner",
+      "name": "7 Min Full Body",
+      "description": "Quick full body routine to build strength and burn calories at home with no equipment.",
+      "category": "FULL_BODY",
+      "difficulty": "BEGINNER",
+      "durationMinutes": 7,
+      "calories": 65,
+      "accentColor": "#FF6D00",
+      "isFeatured": true,
+      "exercises": [
+        {
+          "id": "jumping_jacks",
+          "name": "Jumping Jacks",
+          "durationSeconds": 30,
+          "restSeconds": 10,
+          "instructions": "Stand tall with feet together. Jump while spreading legs and raising arms overhead. Return to start and repeat at a steady pace.",
+          "muscleGroup": "FULL_BODY",
+          "caloriesPerMinute": 10
+        },
+        {
+          "id": "push_ups",
+          "name": "Push Ups",
+          "durationSeconds": 30,
+          "restSeconds": 15,
+          "instructions": "Place hands shoulder-width apart. Lower chest toward the floor, keep core tight, then push back up. Drop to knees if needed.",
+          "muscleGroup": "CHEST",
+          "caloriesPerMinute": 8
+        },
+        {
+          "id": "squats",
+          "name": "Squats",
+          "durationSeconds": 30,
+          "restSeconds": 15,
+          "instructions": "Feet hip-width apart. Push hips back and bend knees to lower down. Keep chest up and drive through heels to stand.",
+          "muscleGroup": "LEGS",
+          "caloriesPerMinute": 8
+        },
+        {
+          "id": "plank",
+          "name": "Plank",
+          "durationSeconds": 30,
+          "restSeconds": 10,
+          "instructions": "Forearms on floor, body in a straight line from head to heels. Brace core and avoid sagging hips.",
+          "muscleGroup": "ABS",
+          "caloriesPerMinute": 5
+        },
+        {
+          "id": "lunges",
+          "name": "Lunges",
+          "durationSeconds": 30,
+          "restSeconds": 10,
+          "instructions": "Step forward and lower until both knees are at 90 degrees. Push through front heel to return. Alternate legs.",
+          "muscleGroup": "LEGS",
+          "caloriesPerMinute": 8
+        },
+        {
+          "id": "crunches",
+          "name": "Crunches",
+          "durationSeconds": 30,
+          "restSeconds": 10,
+          "instructions": "Lie on back, knees bent. Lift shoulders off floor using abs. Lower with control and repeat.",
+          "muscleGroup": "ABS",
+          "caloriesPerMinute": 6
+        }
+      ]
+    },
+    {
+      "id": "extreme_abs",
+      "name": "Extreme Ab Workout",
+      "description": "Intense core session targeting upper abs, lower abs, and obliques.",
+      "category": "ABS",
+      "difficulty": "INTERMEDIATE",
+      "durationMinutes": 10,
+      "calories": 75,
+      "accentColor": "#FF5722",
+      "exercises": [
+        {
+          "id": "bicycle_crunch",
+          "name": "Bicycle Crunch",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Lie on back, hands behind head. Bring opposite elbow to knee while extending the other leg. Alternate sides smoothly.",
+          "muscleGroup": "ABS"
+        },
+        {
+          "id": "leg_raises",
+          "name": "Leg Raises",
+          "durationSeconds": 35,
+          "restSeconds": 15,
+          "instructions": "Lie flat, legs straight. Raise legs to 90 degrees without arching lower back. Lower slowly.",
+          "muscleGroup": "ABS"
+        },
+        {
+          "id": "russian_twist",
+          "name": "Russian Twist",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Sit with knees bent, lean back slightly. Rotate torso side to side, touching floor beside hips.",
+          "muscleGroup": "ABS"
+        },
+        {
+          "id": "mountain_climber",
+          "name": "Mountain Climber",
+          "durationSeconds": 35,
+          "restSeconds": 15,
+          "instructions": "High plank position. Drive knees toward chest alternately at a quick but controlled pace.",
+          "muscleGroup": "FULL_BODY"
+        },
+        {
+          "id": "plank_hold",
+          "name": "Plank Hold",
+          "durationSeconds": 45,
+          "restSeconds": 10,
+          "instructions": "Hold a strong plank. Squeeze glutes and keep breathing steady throughout the hold.",
+          "muscleGroup": "ABS"
+        }
+      ]
+    },
+    {
+      "id": "chest_power",
+      "name": "Chest Power",
+      "description": "Build chest and triceps strength using bodyweight pushing movements.",
+      "category": "CHEST",
+      "difficulty": "INTERMEDIATE",
+      "durationMinutes": 12,
+      "calories": 80,
+      "accentColor": "#E65100",
+      "exercises": [
+        {
+          "id": "standard_push_up",
+          "name": "Standard Push Up",
+          "durationSeconds": 40,
+          "restSeconds": 20,
+          "instructions": "Full range push ups with controlled tempo. Keep elbows at roughly 45 degrees from torso.",
+          "muscleGroup": "CHEST"
+        },
+        {
+          "id": "wide_push_up",
+          "name": "Wide Push Up",
+          "durationSeconds": 35,
+          "restSeconds": 20,
+          "instructions": "Hands wider than shoulders to emphasize chest. Maintain a straight body line.",
+          "muscleGroup": "CHEST"
+        },
+        {
+          "id": "diamond_push_up",
+          "name": "Diamond Push Up",
+          "durationSeconds": 30,
+          "restSeconds": 20,
+          "instructions": "Hands close together forming a diamond shape. Lower chest toward hands and press up.",
+          "muscleGroup": "ARMS"
+        },
+        {
+          "id": "triceps_dips",
+          "name": "Triceps Dips",
+          "durationSeconds": 35,
+          "restSeconds": 20,
+          "instructions": "Use a chair or low surface. Lower body by bending elbows, then press back up.",
+          "muscleGroup": "ARMS"
+        }
+      ]
+    },
+    {
+      "id": "leg_day_burn",
+      "name": "Leg Day Burn",
+      "description": "Lower body workout for quads, hamstrings, glutes, and calves.",
+      "category": "LEGS",
+      "difficulty": "BEGINNER",
+      "durationMinutes": 11,
+      "calories": 78,
+      "accentColor": "#26A69A",
+      "exercises": [
+        {
+          "id": "bodyweight_squat",
+          "name": "Bodyweight Squat",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Squat to comfortable depth with knees tracking over toes. Stand tall at the top.",
+          "muscleGroup": "LEGS"
+        },
+        {
+          "id": "reverse_lunge",
+          "name": "Reverse Lunge",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Step one leg back and lower into a lunge. Return to standing and switch legs.",
+          "muscleGroup": "LEGS"
+        },
+        {
+          "id": "wall_sit",
+          "name": "Wall Sit",
+          "durationSeconds": 45,
+          "restSeconds": 20,
+          "instructions": "Back against wall, slide down until thighs are parallel to floor. Hold steady.",
+          "muscleGroup": "LEGS"
+        },
+        {
+          "id": "calf_raises",
+          "name": "Calf Raises",
+          "durationSeconds": 35,
+          "restSeconds": 10,
+          "instructions": "Rise onto toes, pause at top, lower heels slowly. Keep balance and control.",
+          "muscleGroup": "LEGS"
+        }
+      ]
+    },
+    {
+      "id": "arm_sculpt",
+      "name": "Arm Sculpt",
+      "description": "Tone biceps, triceps, and shoulders with no dumbbells required.",
+      "category": "ARMS",
+      "difficulty": "BEGINNER",
+      "durationMinutes": 9,
+      "calories": 55,
+      "accentColor": "#7E57C2",
+      "exercises": [
+        {
+          "id": "arm_circles",
+          "name": "Arm Circles",
+          "durationSeconds": 30,
+          "restSeconds": 10,
+          "instructions": "Extend arms to sides and make small then large circles forward and backward.",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "id": "close_grip_push_up",
+          "name": "Close Grip Push Up",
+          "durationSeconds": 35,
+          "restSeconds": 15,
+          "instructions": "Hands under chest, elbows close to body. Focus on triceps engagement.",
+          "muscleGroup": "ARMS"
+        },
+        {
+          "id": "punch_combo",
+          "name": "Punch Combo",
+          "durationSeconds": 40,
+          "restSeconds": 10,
+          "instructions": "Alternate jabs and crosses with light footwork. Keep core engaged.",
+          "muscleGroup": "ARMS"
+        },
+        {
+          "id": "shoulder_tap",
+          "name": "Shoulder Tap Plank",
+          "durationSeconds": 35,
+          "restSeconds": 10,
+          "instructions": "High plank. Tap opposite shoulder with hand while minimizing hip sway.",
+          "muscleGroup": "SHOULDERS"
+        }
+      ]
+    },
+    {
+      "id": "booty_lift",
+      "name": "Booty Lift",
+      "description": "Glute-focused routine to shape and strengthen your lower body.",
+      "category": "BUTT",
+      "difficulty": "INTERMEDIATE",
+      "durationMinutes": 10,
+      "calories": 70,
+      "accentColor": "#EC407A",
+      "exercises": [
+        {
+          "id": "glute_bridge",
+          "name": "Glute Bridge",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Lie on back, feet flat. Drive hips up, squeeze glutes at top, lower with control.",
+          "muscleGroup": "BUTT"
+        },
+        {
+          "id": "donkey_kick",
+          "name": "Donkey Kick",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "On all fours, kick one leg back and up. Keep core stable. Switch sides halfway.",
+          "muscleGroup": "BUTT"
+        },
+        {
+          "id": "fire_hydrant",
+          "name": "Fire Hydrant",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "On all fours, lift knee out to the side. Keep back flat and move with control.",
+          "muscleGroup": "BUTT"
+        },
+        {
+          "id": "squat_pulse",
+          "name": "Squat Pulse",
+          "durationSeconds": 35,
+          "restSeconds": 10,
+          "instructions": "Hold low squat position and pulse up and down slightly without standing fully.",
+          "muscleGroup": "BUTT"
+        }
+      ]
+    },
+    {
+      "id": "hiit_blast",
+      "name": "HIIT Fat Burn",
+      "description": "High intensity intervals to maximize calorie burn in minimal time.",
+      "category": "HIIT",
+      "difficulty": "ADVANCED",
+      "durationMinutes": 8,
+      "calories": 95,
+      "accentColor": "#D84315",
+      "exercises": [
+        {
+          "id": "burpees",
+          "name": "Burpees",
+          "durationSeconds": 30,
+          "restSeconds": 20,
+          "instructions": "Drop to floor, chest down, jump feet in, explode up with a jump. Maintain steady rhythm.",
+          "muscleGroup": "FULL_BODY",
+          "caloriesPerMinute": 12
+        },
+        {
+          "id": "high_knees",
+          "name": "High Knees",
+          "durationSeconds": 30,
+          "restSeconds": 15,
+          "instructions": "Run in place driving knees to hip height quickly. Pump arms for momentum.",
+          "muscleGroup": "FULL_BODY",
+          "caloriesPerMinute": 11
+        },
+        {
+          "id": "jump_squat",
+          "name": "Jump Squat",
+          "durationSeconds": 30,
+          "restSeconds": 20,
+          "instructions": "Squat down then explode upward into a jump. Land softly and repeat.",
+          "muscleGroup": "LEGS",
+          "caloriesPerMinute": 11
+        },
+        {
+          "id": "speed_skater",
+          "name": "Speed Skater",
+          "durationSeconds": 30,
+          "restSeconds": 15,
+          "instructions": "Leap side to side landing on one foot, swinging opposite leg behind for balance.",
+          "muscleGroup": "FULL_BODY",
+          "caloriesPerMinute": 10
+        }
+      ]
+    },
+    {
+      "id": "warm_up_flow",
+      "name": "Dynamic Warm Up",
+      "description": "Prepare muscles and joints before training with gentle dynamic movements.",
+      "category": "WARM_UP",
+      "difficulty": "BEGINNER",
+      "durationMinutes": 5,
+      "calories": 25,
+      "accentColor": "#FFA726",
+      "exercises": [
+        {
+          "id": "march_in_place",
+          "name": "March in Place",
+          "durationSeconds": 30,
+          "restSeconds": 5,
+          "instructions": "March with high posture, gradually increasing pace to raise heart rate.",
+          "muscleGroup": "FULL_BODY"
+        },
+        {
+          "id": "arm_swing",
+          "name": "Arm Swings",
+          "durationSeconds": 30,
+          "restSeconds": 5,
+          "instructions": "Swing arms forward and backward, then cross body to loosen shoulders.",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "id": "hip_circle",
+          "name": "Hip Circles",
+          "durationSeconds": 30,
+          "restSeconds": 5,
+          "instructions": "Hands on hips, draw circles with hips clockwise then counterclockwise.",
+          "muscleGroup": "BUTT"
+        },
+        {
+          "id": "leg_swing",
+          "name": "Leg Swings",
+          "durationSeconds": 30,
+          "restSeconds": 5,
+          "instructions": "Hold wall for balance. Swing each leg forward and back in controlled motion.",
+          "muscleGroup": "LEGS"
+        }
+      ]
+    },
+    {
+      "id": "stretch_recovery",
+      "name": "Cool Down Stretch",
+      "description": "Stretch major muscle groups to improve flexibility and speed recovery.",
+      "category": "STRETCH",
+      "difficulty": "BEGINNER",
+      "durationMinutes": 6,
+      "calories": 20,
+      "accentColor": "#66BB6A",
+      "exercises": [
+        {
+          "id": "hamstring_stretch",
+          "name": "Hamstring Stretch",
+          "durationSeconds": 40,
+          "restSeconds": 5,
+          "instructions": "Sit or stand and reach toward toes. Hold a gentle stretch without bouncing.",
+          "muscleGroup": "LEGS"
+        },
+        {
+          "id": "quad_stretch",
+          "name": "Quad Stretch",
+          "durationSeconds": 40,
+          "restSeconds": 5,
+          "instructions": "Stand on one leg, pull heel toward glute. Keep knees together and hips forward.",
+          "muscleGroup": "LEGS"
+        },
+        {
+          "id": "child_pose",
+          "name": "Child's Pose",
+          "durationSeconds": 45,
+          "restSeconds": 5,
+          "instructions": "Kneel and sit back on heels, arms extended forward. Breathe deeply and relax.",
+          "muscleGroup": "BACK"
+        },
+        {
+          "id": "shoulder_stretch",
+          "name": "Shoulder Stretch",
+          "durationSeconds": 40,
+          "restSeconds": 5,
+          "instructions": "Pull one arm across chest using opposite hand. Hold and switch sides.",
+          "muscleGroup": "SHOULDERS"
+        }
+      ]
+    },
+    {
+      "id": "total_body_advanced",
+      "name": "Total Body Advanced",
+      "description": "Challenging full body circuit for experienced users seeking a serious burn.",
+      "category": "FULL_BODY",
+      "difficulty": "ADVANCED",
+      "durationMinutes": 15,
+      "calories": 120,
+      "accentColor": "#BF360C",
+      "exercises": [
+        {
+          "id": "burpee_push_up",
+          "name": "Burpee Push Up",
+          "durationSeconds": 40,
+          "restSeconds": 20,
+          "instructions": "Perform a burpee with a push up at the bottom. Move explosively but with good form.",
+          "muscleGroup": "FULL_BODY"
+        },
+        {
+          "id": "pike_push_up",
+          "name": "Pike Push Up",
+          "durationSeconds": 35,
+          "restSeconds": 20,
+          "instructions": "Hips high in inverted V. Bend elbows to lower head toward floor, then press up.",
+          "muscleGroup": "SHOULDERS"
+        },
+        {
+          "id": "single_leg_glute_bridge",
+          "name": "Single Leg Glute Bridge",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "One foot on floor, other leg extended. Drive hips up using one glute, switch halfway.",
+          "muscleGroup": "BUTT"
+        },
+        {
+          "id": "v_up",
+          "name": "V-Up",
+          "durationSeconds": 35,
+          "restSeconds": 15,
+          "instructions": "Lie flat, simultaneously lift legs and torso to touch toes. Lower with control.",
+          "muscleGroup": "ABS"
+        },
+        {
+          "id": "plank_to_push_up",
+          "name": "Plank to Push Up",
+          "durationSeconds": 40,
+          "restSeconds": 15,
+          "instructions": "Start in forearm plank. Press up to hands one arm at a time, then lower back down.",
+          "muscleGroup": "FULL_BODY"
+        }
+      ]
+    }
+  ]
+}
