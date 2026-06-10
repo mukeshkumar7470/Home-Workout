@@ -63,7 +63,6 @@ dependencies {
     implementation(libs.lottie.compose)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.splashscreen)
     ksp(libs.hilt.compiler)
     ksp(libs.room.compiler)
     testImplementation(libs.junit)

@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!--
-        Main app theme.
-        windowBackground = branded image layer-list so that even the 1-2 frames
-        between the system splash exit and the first Compose draw show branding,
-        never a blank/white/dark plain window.
-    -->
-    <style name="Theme.HomeWorkout" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_window_background</item>
+    <style name="Theme.HomeWorkout" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
-
-    <!--
-        SplashScreen API launch theme.
-        Icon = transparent_pixel  →  the system splash is visually invisible (just
-        a plain dark window for < 1 frame before Compose draws our branded image).
-        This lets the Compose full-screen image be the ONLY visible splash screen.
-        setKeepOnScreenCondition is released the moment the Compose splash is laid
-        out, so the system splash exits instantly and the branded Compose image
-        is already ready behind it.
-    -->
-    <style name="Theme.HomeWorkout.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/splash_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/transparent_pixel</item>
-        <item name="postSplashScreenTheme">@style/Theme.HomeWorkout</item>
-    </style>
-
 </resources>

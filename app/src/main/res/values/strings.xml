@@ -26,28 +26,6 @@
     <string name="settings_units_desc">Weight and measurement preferences</string>
     <string name="back">Back</string>
 
-    <!-- Splash -->
-    <string name="splash_default_tagline">Train anywhere. No equipment needed.</string>
-    <string name="splash_brand_subtitle">No Equipment</string>
-    <string name="settings_splash">Splash Screen</string>
-    <string name="settings_splash_desc">Customize your app launch experience</string>
-    <string name="settings_splash_tagline">Custom tagline</string>
-    <string name="settings_splash_tagline_hint">Leave empty for default tagline</string>
-    <string name="settings_splash_animation">Show animation</string>
-    <string name="settings_splash_animation_desc">Display Lottie animation on splash (Branded style)</string>
-    <string name="settings_splash_style">Splash style</string>
-    <string name="settings_splash_style_desc">Choose a layout for the splash screen</string>
-    <string name="splash_style_image">Image</string>
-    <string name="splash_style_branded">Branded</string>
-    <string name="splash_style_minimal">Minimal</string>
-    <string name="splash_style_bold">Bold</string>
-    <string name="settings_splash_preview">Preview splash</string>
-    <string name="settings_splash_preview_desc">See how your splash screen will look at launch</string>
-    <string name="splash_preview_badge">Preview</string>
-    <string name="splash_preview_close">Close preview</string>
-    <string name="splash_preview_play_exit">Play exit animation</string>
-    <string name="splash_preview_replay">Replay preview</string>
-
     <!-- Profile -->
     <string name="profile_title">Fitness Enthusiast</string>
     <string name="profile_best_streak">Best streak: %1$d days</string>
