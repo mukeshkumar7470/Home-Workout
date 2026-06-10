@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">होम वर्कआउट</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">होम</string>
+    <string name="nav_workouts">वर्कआउट</string>
+    <string name="nav_report">रिपोर्ट</string>
+    <string name="nav_profile">मैं</string>
+
+    <!-- Settings -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_desc">अपनी पसंदीदा भाषा चुनें</string>
+    <string name="settings_theme">थीम</string>
+    <string name="settings_theme_desc">डार्क और लाइट मोड के बीच स्विच करें</string>
+    <string name="language_english">अंग्रेज़ी</string>
+    <string name="language_hindi">हिंदी</string>
+    <string name="theme_dark">डार्क</string>
+    <string name="theme_light">लाइट</string>
+    <string name="settings_sound">ध्वनि</string>
+    <string name="settings_sound_desc">वर्कआउट आवाज़ और टाइमर ध्वनि</string>
+    <string name="settings_rest_timer">आराम टाइमर</string>
+    <string name="settings_rest_timer_desc">व्यायाम के बीच डिफ़ॉल्ट आराम अवधि</string>
+    <string name="settings_units">इकाइयाँ</string>
+    <string name="settings_units_desc">वजन और माप वरीयताएँ</string>
+    <string name="back">वापस</string>
+
+    <!-- Profile -->
+    <string name="profile_title">फिटनेस उत्साही</string>
+    <string name="profile_best_streak">सर्वश्रेष्ठ स्ट्रीक: %1$d दिन</string>
+    <string name="profile_goal">लक्ष्य: %1$s</string>
+    <string name="profile_age">उम्र: %1$d</string>
+    <string name="profile_weight">वजन: %1$s kg</string>
+    <string name="profile_level">स्तर: %1$s</string>
+    <string name="profile_reminders">वर्कआउट रिमाइंडर</string>
+    <string name="profile_reminders_desc">सुबह 7:00 बजे दैनिक सूचनाएँ</string>
+    <string name="profile_my_goals">मेरे लक्ष्य</string>
+    <string name="profile_my_goals_desc">मांसपेशी बनाएँ • वजन घटाएँ • सक्रिय रहें</string>
+    <string name="profile_settings">सेटिंग्स</string>
+    <string name="profile_settings_desc">भाषा, थीम, ध्वनि और इकाइयाँ</string>
+    <string name="profile_about">के बारे में</string>
+    <string name="profile_about_desc">होम वर्कआउट आपको बिना उपकरण के निर्देशित बॉडीवेट रूटीन से ताकत बनाने और वसा जलाने में मदद करता है।</string>
+
+    <!-- Home -->
+    <string name="home_title">होम वर्कआउट</string>
+    <string name="home_streak">%1$d दिन की स्ट्रीक</string>
+    <string name="home_workouts_count">%1$d वर्कआउट</string>
+    <string name="home_todays_workout">आज का वर्कआउट</string>
+    <string name="home_categories">श्रेणियाँ</string>
+    <string name="home_popular">लोकप्रिय वर्कआउट</string>
+    <string name="filter_all">सभी</string>
+
+    <!-- Workouts -->
+    <string name="workouts_title">सभी वर्कआउट</string>
+    <string name="workouts_body_part">शरीर का हिस्सा</string>
+    <string name="workouts_difficulty">कठिनाई</string>
+    <string name="workouts_count">%1$d वर्कआउट</string>
+
+    <!-- Report -->
+    <string name="report_title">रिपोर्ट</string>
+    <string name="report_workouts">वर्कआउट</string>
+    <string name="report_minutes">मिनट</string>
+    <string name="report_calories">कैलोरी</string>
+    <string name="report_streak">स्ट्रीक</string>
+    <string name="report_streak_days">%1$d दिन</string>
+    <string name="report_recent_history">हाल की गतिविधि</string>
+    <string name="report_empty">अपनी प्रगति ट्रैक करने के लिए एक वर्कआउट पूरा करें।</string>
+
+    <!-- Common -->
+    <string name="error_generic">कुछ गलत हो गया</string>
+    <string name="min_short">%1$d मिनट</string>
+    <string name="kcal_short">%1$d kcal</string>
+</resources>
