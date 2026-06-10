@@ -21,10 +21,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
+import com.example.homeworkout.R
 import com.example.homeworkout.domain.model.WorkoutCategory
 import com.example.homeworkout.presentation.components.CategoryFilterChip
 import com.example.homeworkout.presentation.components.FeaturedWorkoutCard
@@ -35,7 +37,7 @@ import com.example.homeworkout.presentation.components.WorkoutListCard
 fun HomeScreen(
     onWorkoutClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel = appViewModel(),
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -69,18 +71,18 @@ fun HomeScreen(
                 item {
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         Text(
-                            text = "Home Workout",
+                            text = stringResource(R.string.home_title),
                             style = MaterialTheme.typography.headlineMedium,
                             fontWeight = FontWeight.Bold,
                         )
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             StatPill(
                                 icon = Icons.Default.LocalFireDepartment,
-                                label = "${state.progress.currentStreak} day streak",
+                                label = stringResource(R.string.home_streak, state.progress.currentStreak),
                             )
                             StatPill(
                                 icon = Icons.Default.LocalFireDepartment,
-                                label = "${state.progress.totalWorkouts} workouts",
+                                label = stringResource(R.string.home_workouts_count, state.progress.totalWorkouts),
                             )
                         }
                     }
@@ -97,7 +99,7 @@ fun HomeScreen(
 
                 item {
                     Text(
-                        text = "Categories",
+                        text = stringResource(R.string.home_categories),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )
@@ -107,7 +109,7 @@ fun HomeScreen(
                     LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         item {
                             CategoryFilterChip(
-                                label = "All",
+                                label = stringResource(R.string.filter_all),
                                 selected = state.selectedCategory == null,
                                 onClick = { viewModel.onIntent(HomeIntent.CategorySelected(null)) },
                             )
@@ -128,7 +130,7 @@ fun HomeScreen(
 
                 item {
                     Text(
-                        text = "Popular Workouts",
+                        text = stringResource(R.string.home_popular),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )

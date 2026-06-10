@@ -1,5 +1,6 @@
 package com.example.homeworkout.presentation.profile
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,15 +28,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
+import com.example.homeworkout.R
 
 @Composable
 fun ProfileScreen(
+    onNavigateToSettings: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: ProfileViewModel = appViewModel(),
+    viewModel: ProfileViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -73,39 +77,63 @@ fun ProfileScreen(
                             )
                         }
                         Text(
-                            text = "Fitness Enthusiast",
+                            text = stringResource(R.string.profile_title),
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                         )
                         Text(
-                            text = "Best streak: ${state.progress.bestStreak} days",
+                            text = stringResource(R.string.profile_best_streak, state.progress.bestStreak),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
+                        state.profile.fitnessGoal?.let { goal ->
+                            Text(
+                                text = stringResource(R.string.profile_goal, goal.displayName),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.primary,
+                            )
+                        }
+                        val profileDetails = buildList {
+                            state.profile.age?.let { add(stringResource(R.string.profile_age, it)) }
+                            state.profile.weightKg?.let {
+                                add(stringResource(R.string.profile_weight, it.toString()))
+                            }
+                            state.profile.fitnessLevel?.let {
+                                add(stringResource(R.string.profile_level, it.displayName))
+                            }
+                        }
+                        if (profileDetails.isNotEmpty()) {
+                            Text(
+                                text = profileDetails.joinToString(" • "),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
                     }
                 }
 
                 item {
                     ProfileMenuCard(
-                        title = "Workout Reminders",
-                        subtitle = "Daily notifications at 7:00 AM",
+                        title = stringResource(R.string.profile_reminders),
+                        subtitle = stringResource(R.string.profile_reminders_desc),
                         icon = Icons.Default.Notifications,
                     )
                 }
 
                 item {
                     ProfileMenuCard(
-                        title = "My Goals",
-                        subtitle = "Build muscle • Lose weight • Stay active",
+                        title = stringResource(R.string.profile_my_goals),
+                        subtitle = stringResource(R.string.profile_my_goals_desc),
                         icon = Icons.Default.FitnessCenter,
                     )
                 }
 
                 item {
                     ProfileMenuCard(
-                        title = "Settings",
-                        subtitle = "Sound, rest timer, units",
+                        title = stringResource(R.string.profile_settings),
+                        subtitle = stringResource(R.string.profile_settings_desc),
                         icon = Icons.Default.Settings,
+                        onClick = onNavigateToSettings,
                     )
                 }
 
@@ -122,12 +150,12 @@ fun ProfileScreen(
                             verticalArrangement = Arrangement.spacedBy(8.dp),
                         ) {
                             Text(
-                                text = "About",
+                                text = stringResource(R.string.profile_about),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.SemiBold,
                             )
                             Text(
-                                text = "Home Workout helps you build strength and burn fat with guided bodyweight routines — no equipment needed.",
+                                text = stringResource(R.string.profile_about_desc),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -144,9 +172,12 @@ private fun ProfileMenuCard(
     title: String,
     subtitle: String,
     icon: androidx.compose.ui.graphics.vector.ImageVector,
+    onClick: (() -> Unit)? = null,
 ) {
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
     ) {

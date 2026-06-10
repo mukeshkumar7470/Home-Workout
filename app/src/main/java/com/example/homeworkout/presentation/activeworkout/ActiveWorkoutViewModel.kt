@@ -6,9 +6,12 @@ import com.example.homeworkout.domain.model.ActiveWorkoutState
 import com.example.homeworkout.domain.usecase.GetWorkoutByIdUseCase
 import com.example.homeworkout.domain.usecase.SaveWorkoutCompletionUseCase
 import com.example.homeworkout.presentation.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class ActiveWorkoutViewModel(
+@HiltViewModel
+class ActiveWorkoutViewModel @Inject constructor(
     private val getWorkoutByIdUseCase: GetWorkoutByIdUseCase,
     private val saveWorkoutCompletionUseCase: SaveWorkoutCompletionUseCase,
 ) : MviViewModel<ActiveWorkoutIntent, ActiveWorkoutUiState, ActiveWorkoutEffect>(

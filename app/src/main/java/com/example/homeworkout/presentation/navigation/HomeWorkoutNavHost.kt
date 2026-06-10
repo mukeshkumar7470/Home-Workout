@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -25,6 +26,7 @@ import com.example.homeworkout.presentation.activeworkout.ActiveWorkoutScreen
 import com.example.homeworkout.presentation.home.HomeScreen
 import com.example.homeworkout.presentation.profile.ProfileScreen
 import com.example.homeworkout.presentation.report.ReportScreen
+import com.example.homeworkout.presentation.settings.SettingsScreen
 import com.example.homeworkout.presentation.workoutdetail.WorkoutDetailScreen
 import com.example.homeworkout.presentation.workouts.WorkoutsScreen
 
@@ -35,7 +37,8 @@ fun HomeWorkoutNavHost(
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
-    val showBottomBar = currentRoute in BottomNavItem.entries.map { it.route }
+    val bottomNavRoutes = BottomNavItem.entries.map { it.route }
+    val showBottomBar = currentRoute in bottomNavRoutes
 
     Scaffold(
         modifier = modifier,
@@ -44,6 +47,7 @@ fun HomeWorkoutNavHost(
                 NavigationBar {
                     BottomNavItem.entries.forEach { item ->
                         val selected = currentRoute == item.route
+                        val label = stringResource(item.labelRes)
                         NavigationBarItem(
                             selected = selected,
                             onClick = {
@@ -63,10 +67,10 @@ fun HomeWorkoutNavHost(
                                         BottomNavItem.REPORT -> Icons.Default.BarChart
                                         BottomNavItem.PROFILE -> Icons.Default.Person
                                     },
-                                    contentDescription = item.label,
+                                    contentDescription = label,
                                 )
                             },
-                            label = { Text(item.label) },
+                            label = { Text(label) },
                         )
                     }
                 }
@@ -99,7 +103,13 @@ fun HomeWorkoutNavHost(
             }
 
             composable(BottomNavItem.PROFILE.route) {
-                ProfileScreen()
+                ProfileScreen(
+                    onNavigateToSettings = { navController.navigate(Routes.SETTINGS) },
+                )
+            }
+
+            composable(Routes.SETTINGS) {
+                SettingsScreen(onBack = { navController.popBackStack() })
             }
 
             composable(

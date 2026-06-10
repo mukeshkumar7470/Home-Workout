@@ -6,9 +6,12 @@ import com.example.homeworkout.domain.usecase.GetFeaturedWorkoutUseCase
 import com.example.homeworkout.domain.usecase.GetUserProgressUseCase
 import com.example.homeworkout.domain.usecase.GetWorkoutsUseCase
 import com.example.homeworkout.presentation.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val getFeaturedWorkoutUseCase: GetFeaturedWorkoutUseCase,
     private val getWorkoutsUseCase: GetWorkoutsUseCase,
     private val getUserProgressUseCase: GetUserProgressUseCase,

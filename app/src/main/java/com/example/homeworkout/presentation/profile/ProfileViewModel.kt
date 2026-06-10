@@ -1,12 +1,17 @@
 package com.example.homeworkout.presentation.profile
 
 import androidx.lifecycle.viewModelScope
+import com.example.homeworkout.domain.usecase.GetUserProfileUseCase
 import com.example.homeworkout.domain.usecase.GetUserProgressUseCase
 import com.example.homeworkout.presentation.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class ProfileViewModel(
+@HiltViewModel
+class ProfileViewModel @Inject constructor(
     private val getUserProgressUseCase: GetUserProgressUseCase,
+    private val getUserProfileUseCase: GetUserProfileUseCase,
 ) : MviViewModel<ProfileIntent, ProfileState, ProfileEffect>(ProfileState()) {
 
     init {
@@ -24,7 +29,8 @@ class ProfileViewModel(
             setState { copy(isLoading = true, errorMessage = null) }
             runCatching {
                 val progress = getUserProgressUseCase()
-                setState { copy(isLoading = false, progress = progress) }
+                val profile = getUserProfileUseCase()
+                setState { copy(isLoading = false, progress = progress, profile = profile) }
             }.onFailure { error ->
                 setState {
                     copy(

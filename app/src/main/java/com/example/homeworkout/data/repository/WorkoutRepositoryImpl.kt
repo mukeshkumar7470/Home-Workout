@@ -1,6 +1,6 @@
 package com.example.homeworkout.data.repository
 
-import com.example.homeworkout.data.local.ProgressLocalDataSource
+import com.example.homeworkout.data.local.RoomProgressDataSource
 import com.example.homeworkout.data.local.WorkoutAssetDataSource
 import com.example.homeworkout.data.mapper.toDomain
 import com.example.homeworkout.domain.model.UserProgress
@@ -10,7 +10,7 @@ import com.example.homeworkout.domain.repository.WorkoutRepository
 
 class WorkoutRepositoryImpl(
     private val assetDataSource: WorkoutAssetDataSource,
-    private val progressDataSource: ProgressLocalDataSource,
+    private val progressDataSource: RoomProgressDataSource,
 ) : WorkoutRepository {
 
     private val workouts: List<Workout> by lazy {

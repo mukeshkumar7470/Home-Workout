@@ -39,8 +39,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
+import com.example.homeworkout.presentation.components.ExerciseLottieAnimation
 import com.example.homeworkout.presentation.components.parseAccentColor
 import kotlinx.coroutines.delay
 
@@ -48,7 +49,7 @@ import kotlinx.coroutines.delay
 fun ActiveWorkoutScreen(
     workoutId: String,
     onBack: () -> Unit,
-    viewModel: ActiveWorkoutViewModel = appViewModel(key = "active_$workoutId"),
+    viewModel: ActiveWorkoutViewModel = hiltViewModel(key = workoutId),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     var completionDialog by remember { mutableStateOf<Pair<String, Int>?>(null) }
@@ -155,12 +156,18 @@ fun ActiveWorkoutScreen(
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     Box(
-                        modifier = Modifier
-                            .size(220.dp)
-                            .clip(CircleShape)
-                            .background(accent.copy(alpha = 0.15f)),
+                        modifier = Modifier.size(220.dp),
                         contentAlignment = Alignment.Center,
                     ) {
+                        ExerciseLottieAnimation(
+                            exerciseId = active.currentExercise?.id ?: "generic_workout",
+                            isRestPhase = active.phase.isRestPhase,
+                            isPlaying = !active.phase.isPaused,
+                            modifier = Modifier
+                                .size(220.dp)
+                                .clip(CircleShape)
+                                .background(accent.copy(alpha = 0.12f)),
+                        )
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Text(
                                 text = phaseLabel,

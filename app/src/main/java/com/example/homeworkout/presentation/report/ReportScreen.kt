@@ -27,10 +27,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
+import com.example.homeworkout.R
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -38,7 +40,7 @@ import java.util.Locale
 @Composable
 fun ReportScreen(
     modifier: Modifier = Modifier,
-    viewModel: ReportViewModel = appViewModel(),
+    viewModel: ReportViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -57,7 +59,7 @@ fun ReportScreen(
             ) {
                 item {
                     Text(
-                        text = "Report",
+                        text = stringResource(R.string.report_title),
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                     )
@@ -69,13 +71,13 @@ fun ReportScreen(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         ReportStatCard(
-                            title = "Workouts",
+                            title = stringResource(R.string.report_workouts),
                             value = "${state.progress.totalWorkouts}",
                             icon = Icons.Default.Whatshot,
                             modifier = Modifier.weight(1f),
                         )
                         ReportStatCard(
-                            title = "Minutes",
+                            title = stringResource(R.string.report_minutes),
                             value = "${state.progress.totalMinutes}",
                             icon = Icons.Default.Schedule,
                             modifier = Modifier.weight(1f),
@@ -89,14 +91,14 @@ fun ReportScreen(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         ReportStatCard(
-                            title = "Calories",
+                            title = stringResource(R.string.report_calories),
                             value = "${state.progress.totalCalories}",
                             icon = Icons.Default.LocalFireDepartment,
                             modifier = Modifier.weight(1f),
                         )
                         ReportStatCard(
-                            title = "Streak",
-                            value = "${state.progress.currentStreak} days",
+                            title = stringResource(R.string.report_streak),
+                            value = stringResource(R.string.report_streak_days, state.progress.currentStreak),
                             icon = Icons.Default.Whatshot,
                             modifier = Modifier.weight(1f),
                         )
@@ -105,7 +107,7 @@ fun ReportScreen(
 
                 item {
                     Text(
-                        text = "Recent History",
+                        text = stringResource(R.string.report_recent_history),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )
@@ -114,7 +116,7 @@ fun ReportScreen(
                 if (state.progress.history.isEmpty()) {
                     item {
                         Text(
-                            text = "Complete a workout to start tracking your progress.",
+                            text = stringResource(R.string.report_empty),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

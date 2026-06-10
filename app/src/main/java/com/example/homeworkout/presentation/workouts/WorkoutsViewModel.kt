@@ -3,9 +3,12 @@ package com.example.homeworkout.presentation.workouts
 import androidx.lifecycle.viewModelScope
 import com.example.homeworkout.domain.usecase.GetWorkoutsUseCase
 import com.example.homeworkout.presentation.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class WorkoutsViewModel(
+@HiltViewModel
+class WorkoutsViewModel @Inject constructor(
     private val getWorkoutsUseCase: GetWorkoutsUseCase,
 ) : MviViewModel<WorkoutsIntent, WorkoutsState, WorkoutsEffect>(WorkoutsState()) {
 

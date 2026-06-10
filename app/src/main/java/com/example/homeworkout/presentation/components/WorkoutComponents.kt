@@ -23,9 +23,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.example.homeworkout.R
 import com.example.homeworkout.domain.model.Difficulty
 import com.example.homeworkout.domain.model.Workout
 import com.example.homeworkout.domain.model.WorkoutCategory
@@ -192,7 +194,7 @@ fun FeaturedWorkoutCard(
         ) {
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(
-                    text = "TODAY'S WORKOUT",
+                    text = stringResource(R.string.home_todays_workout),
                     style = MaterialTheme.typography.labelLarge,
                     color = Color.White.copy(alpha = 0.85f),
                 )

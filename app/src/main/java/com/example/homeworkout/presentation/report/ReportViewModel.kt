@@ -3,9 +3,12 @@ package com.example.homeworkout.presentation.report
 import androidx.lifecycle.viewModelScope
 import com.example.homeworkout.domain.usecase.GetUserProgressUseCase
 import com.example.homeworkout.presentation.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class ReportViewModel(
+@HiltViewModel
+class ReportViewModel @Inject constructor(
     private val getUserProgressUseCase: GetUserProgressUseCase,
 ) : MviViewModel<ReportIntent, ReportState, ReportEffect>(ReportState()) {
 

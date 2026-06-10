@@ -25,7 +25,8 @@ An Android fitness app inspired by [Home Workout - No Equipment](https://play.go
 | Navigation | Navigation Compose |
 | Async | Kotlin Coroutines, StateFlow |
 | JSON | Kotlinx Serialization |
-| DI | Manual (`AppContainer`) |
+| DI | Hilt |
+| Persistence | Room (history, profile, stats) |
 | Min SDK | 24 (Android 7.0) |
 | Target SDK | 36 |
 
@@ -340,12 +341,19 @@ Edit `app/src/main/assets/workouts.json`:
 
 ## Future Improvements
 
-- [ ] Hilt dependency injection
-- [ ] Room database for history
-- [ ] Lottie / video exercise animations
-- [ ] Onboarding flow (goals, fitness level)
+- [ ] Replace placeholder Lottie animations with per-exercise motion assets
+- [ ] Onboarding-driven workout recommendations
 - [ ] Workout reminders (AlarmManager / WorkManager)
 - [ ] Unit tests for ViewModels and use cases
+
+---
+
+## Recently Added
+
+- [x] Hilt dependency injection
+- [x] Room database for workout history and progress stats
+- [x] Onboarding assessment flow (age, weight, goals, fitness level)
+- [x] Lottie exercise animations during active workouts
 
 ---
 

@@ -39,8 +39,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
 import com.example.homeworkout.presentation.components.DifficultyBadge
 import com.example.homeworkout.presentation.components.StatPill
 import com.example.homeworkout.presentation.components.parseAccentColor
@@ -51,7 +51,7 @@ fun WorkoutDetailScreen(
     workoutId: String,
     onBack: () -> Unit,
     onStartWorkout: (String) -> Unit,
-    viewModel: WorkoutDetailViewModel = appViewModel(key = "detail_$workoutId"),
+    viewModel: WorkoutDetailViewModel = hiltViewModel(key = workoutId),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 

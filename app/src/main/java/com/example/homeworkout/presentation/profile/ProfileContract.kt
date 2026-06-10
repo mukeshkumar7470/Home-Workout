@@ -1,5 +1,6 @@
 package com.example.homeworkout.presentation.profile
 
+import com.example.homeworkout.domain.model.UserProfile
 import com.example.homeworkout.domain.model.UserProgress
 import com.example.homeworkout.presentation.mvi.MviEffect
 import com.example.homeworkout.presentation.mvi.MviIntent
@@ -12,6 +13,7 @@ sealed interface ProfileIntent : MviIntent {
 data class ProfileState(
     val isLoading: Boolean = true,
     val progress: UserProgress = UserProgress(),
+    val profile: UserProfile = UserProfile(),
     val errorMessage: String? = null,
 ) : MviState
 

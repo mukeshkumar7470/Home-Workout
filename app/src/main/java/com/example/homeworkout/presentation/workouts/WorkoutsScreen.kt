@@ -18,10 +18,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.homeworkout.di.appViewModel
+import com.example.homeworkout.R
 import com.example.homeworkout.domain.model.Difficulty
 import com.example.homeworkout.domain.model.WorkoutCategory
 import com.example.homeworkout.presentation.components.CategoryFilterChip
@@ -31,7 +33,7 @@ import com.example.homeworkout.presentation.components.WorkoutListCard
 fun WorkoutsScreen(
     onWorkoutClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: WorkoutsViewModel = appViewModel(),
+    viewModel: WorkoutsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -64,7 +66,7 @@ fun WorkoutsScreen(
             ) {
                 item {
                     Text(
-                        text = "All Workouts",
+                        text = stringResource(R.string.workouts_title),
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                     )
@@ -72,7 +74,7 @@ fun WorkoutsScreen(
 
                 item {
                     Text(
-                        text = "Body Part",
+                        text = stringResource(R.string.workouts_body_part),
                         style = MaterialTheme.typography.titleSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -82,7 +84,7 @@ fun WorkoutsScreen(
                     ) {
                         item {
                             CategoryFilterChip(
-                                label = "All",
+                                label = stringResource(R.string.filter_all),
                                 selected = state.selectedCategory == null,
                                 onClick = { viewModel.onIntent(WorkoutsIntent.CategorySelected(null)) },
                             )
@@ -101,7 +103,7 @@ fun WorkoutsScreen(
 
                 item {
                     Text(
-                        text = "Difficulty",
+                        text = stringResource(R.string.workouts_difficulty),
                         style = MaterialTheme.typography.titleSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -111,7 +113,7 @@ fun WorkoutsScreen(
                     ) {
                         item {
                             CategoryFilterChip(
-                                label = "All",
+                                label = stringResource(R.string.filter_all),
                                 selected = state.selectedDifficulty == null,
                                 onClick = { viewModel.onIntent(WorkoutsIntent.DifficultySelected(null)) },
                             )
@@ -130,7 +132,7 @@ fun WorkoutsScreen(
 
                 item {
                     Text(
-                        text = "${state.filteredWorkouts.size} workouts",
+                        text = stringResource(R.string.workouts_count, state.filteredWorkouts.size),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )

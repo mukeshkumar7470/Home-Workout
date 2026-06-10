@@ -15,6 +15,12 @@ val DarkSurfaceVariant = Color(0xFF2A2A36)
 val DarkOnSurface = Color(0xFFF5F5F7)
 val DarkOnSurfaceMuted = Color(0xFFB0B0BC)
 
+val LightBackground = Color(0xFFF4F4F8)
+val LightSurface = Color(0xFFFFFFFF)
+val LightSurfaceVariant = Color(0xFFEEEEF2)
+val LightOnSurface = Color(0xFF1C1B1F)
+val LightOnSurfaceMuted = Color(0xFF625B71)
+
 val BeginnerColor = Color(0xFF66BB6A)
 val IntermediateColor = Color(0xFFFFA726)
 val AdvancedColor = Color(0xFFEF5350)
